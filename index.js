@@ -10,7 +10,7 @@ const votesForm = document.getElementById("votes-form");
 
 let currentCharacter = null;
 
-// Fetch and display all characters in character bar
+
 function loadCharacters() {
     fetch(baseURL)
         .then(response => response.json())
@@ -24,3 +24,10 @@ function loadCharacters() {
         });
 }
 
+function displayCharacterDetails(character) {
+    currentCharacter = character;
+    nameDisplay.textContent = character.name;
+    imageDisplay.src = character.image;
+    imageDisplay.alt = character.name;
+    voteCount.textContent = character.votes;
+}

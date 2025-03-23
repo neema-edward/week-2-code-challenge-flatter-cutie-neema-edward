@@ -7,3 +7,6 @@ const imageDisplay = document.getElementById("image");
 const voteCount = document.getElementById("vote-count");
 const votesForm = document.getElementById("votes-form");
 
+
+let currentCharacter = null;
+

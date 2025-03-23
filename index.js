@@ -31,3 +31,17 @@ function displayCharacterDetails(character) {
     imageDisplay.alt = character.name;
     voteCount.textContent = character.votes;
 }
+
+votesForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!currentCharacter) return;
+
+    const votesInput = document.getElementById("votes");
+    const newVotes = parseInt(votesInput.value) || 0;
+    
+ 
+    currentCharacter.votes = (currentCharacter.votes || 0) + newVotes;
+    voteCount.textContent = currentCharacter.votes;
+    
+    votesForm.reset();
+});

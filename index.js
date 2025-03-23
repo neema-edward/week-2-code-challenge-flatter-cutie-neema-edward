@@ -10,3 +10,17 @@ const votesForm = document.getElementById("votes-form");
 
 let currentCharacter = null;
 
+// Fetch and display all characters in character bar
+function loadCharacters() {
+    fetch(baseURL)
+        .then(response => response.json())
+        .then(characters => {
+            characters.forEach(character => {
+                const span = document.createElement("span");
+                span.textContent = character.name;
+                span.addEventListener("click", () => displayCharacterDetails(character));
+                characterBar.appendChild(span);
+            });
+        });
+}
+

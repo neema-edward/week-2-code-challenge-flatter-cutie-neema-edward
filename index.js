@@ -45,3 +45,7 @@ votesForm.addEventListener("submit", (e) => {
     
     votesForm.reset();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadCharacters();
+});

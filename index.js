@@ -32,8 +32,8 @@ function displayCharacterDetails(character) {
     voteCount.textContent = character.votes;
 }
 
-votesForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+votesForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     if (!currentCharacter) return;
 
     const votesInput = document.getElementById("votes");
